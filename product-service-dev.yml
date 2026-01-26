@@ -1,0 +1,23 @@
+server:
+  port: 7001
+  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6002/eureka
+
+spring:
+  datasource:
+    url: jdbc:sqlserver://localhost:1433;databaseName=product_service_db_dev;encrypt=false
+    username: product_service_app_user
+    password: S3cureP@ssw0rd!2025
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    
+  jpa:
+    database-platform: org.hibernate.dialect.SQLServerDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true         
