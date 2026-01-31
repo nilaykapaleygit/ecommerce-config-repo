@@ -12,6 +12,10 @@ spring:
     username: cart_service_app_user
     password: S3cureP@ssw0rd!2025
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  cloud:
+    openfeign:
+      circuitbreaker:
+        enabled: true    
     
   jpa:
     database-platform: org.hibernate.dialect.SQLServerDialect
@@ -20,4 +24,12 @@ spring:
     show-sql: true
     properties:
       hibernate:
-        format_sql: true     
+        format_sql: true
+        
+resilience4j:
+  circuitbreaker:
+    instances:
+      product-service:
+        slidingWindowSize: 10
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10s             
