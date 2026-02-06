@@ -1,5 +1,5 @@
 server:
-  port: 7005
+  port: 7006
   
 eureka:
   client:
@@ -8,8 +8,8 @@ eureka:
 
 spring:
   datasource:
-    url: jdbc:sqlserver://localhost:1433;databaseName=payment_service_db_dev;encrypt=false
-    username: payment_service_app_user
+    url: jdbc:sqlserver://localhost:1433;databaseName=shipping_service_db_dev;encrypt=false
+    username: shipping_service_app_user
     password: S3cureP@ssw0rd!2025
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver  
     
